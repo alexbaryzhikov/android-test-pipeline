@@ -1,0 +1,15 @@
+stages:
+    - test
+    - clean
+
+test_monitor:
+    stage: test
+    script:
+        - ./run_tests.sh
+
+clean_files:
+    stage: clean
+    script:
+        - rm -rf $PWD 
+    when: always
+
